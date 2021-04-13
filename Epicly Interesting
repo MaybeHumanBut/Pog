@@ -1,0 +1,1178 @@
+--Made by Humangas
+
+--V1.14
+
+game.StarterGui:SetCore("SendNotification", {
+		Title = "Script Executed!";
+		Text = "Script is currently loading!";
+		Duration = 5;
+	})
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Variables
+
+local adminfolder = game.Workspace.Terrain._Game.Admin
+
+userInputService = game:GetService("UserInputService")
+
+Player = game.Players.LocalPlayer
+
+local mousee = game.Players.LocalPlayer:GetMouse()
+
+-- Functions
+
+function createbackupregen()
+    local regen = Instance.new("Part")
+    regen.BrickColor = BrickColor.new("Electric blue")
+    regen.Name = "backupregen"
+    regen.Parent = adminfolder
+    regen.Position = Vector3.new(28, 4, -1)
+    regen.Anchored = true
+    adminfolder.Regen.ClickDetector.Parent = adminfolder.backupregen
+end
+
+-- Actual Script
+
+local spamming= false
+Player.Chatted:connect(function(msg)
+  if string.sub(msg, 1, 5) == ":spam" then
+    spamming = true
+    spam(string.sub(msg, 7))
+  elseif msg == ":stop" then
+    spamming = false
+  end
+end)
+
+function spam(text)
+  while spamming == true do wait()
+    game:GetService("Players"):Chat(text)
+  end
+end
+
+-- Sometimes Works (Obby Anti Kill)
+
+Player.Chatted:Connect(function(msg, recipient)
+    commandSplit = string.split(msg, ' ')
+    command = commandSplit[1]
+    if command == ":robbyk" then
+        game.Workspace.Terrain._Game.Workspace.Obby.Jump.TouchInterest:Destroy()
+        for i = 1,9,1 do
+            game.Workspace.Terrain._Game.Workspace.Obby["Jump"..i].TouchInterest:Destroy()
+        end
+    end
+
+    if command == ":slag" then
+        game:GetService'Players':Chat((":spam gear all 000000000000000000000000000000000000000000000000000000000253519495"))
+    end
+    
+    if command == ":iy" then
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    end
+    
+    if command == ":cmdx" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source",true))()
+    end
+    
+    if command == ":hqawaken" then
+        game:GetService'Players':Chat(("music 000000000000000000000000000000000000000000000000000000000360922684"))
+    end
+
+    if command == ":house" then
+        game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-23.4106693, 8.22999954, 63.2581749))
+    end
+
+    if command == ":cbackupr" then
+        game.StarterGui:SetCore("SendNotification", {
+		Title = "Notice!";
+		Text = "Command only works if the regen pad is still here! (This also is only supposed to be used once!)";
+		Duration = 5;
+	})
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "bregen";
+		Text = "Use the command :bregen to regen pads after you use this command";
+		Duration = 5;
+	})
+        createbackupregen()
+    end
+
+    if command == ":regen" then
+        fireclickdetector(game:GetService("Workspace").Terrain["_Game"].Admin.Regen.ClickDetector)
+    end
+    
+    if command == ":bregen" then
+        fireclickdetector(game:GetService("Workspace").Terrain["_Game"].Admin.backupregen.ClickDetector)
+    end
+
+    if command == ":floodlogs" then
+        for i = 1,75,1 do
+            game:GetService'Players':Chat(("h  "))
+            wait()
+        end
+    end
+
+    if command == ":AntiFreeze" then
+    while true do
+        if game.Players.LocalPlayer.Character:FindFirstChild("ice") then
+            game:GetService'Players':Chat(("thaw me"))
+                wait(1)
+        else 
+                wait()
+            end
+        end
+    end
+
+    if command == ":AntiKill" then
+    while true do
+            if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+                game:GetService'Players':Chat(("reset me"))
+                wait(.7)
+            else
+                wait()
+            end
+        end
+    end
+
+    if command == ":AntiPunish" then
+    while true do
+        if game.Lighting:FindFirstChild(game.Players.LocalPlayer.Name) then
+            game:GetService'Players':Chat(("unpunish me"))
+                wait(1)
+        else 
+                wait()
+            end
+        end
+    end
+    
+    if command == ":AntiJail" then
+    while true do
+        if game.Workspace.Terrain._Game.Folder:FindFirstChild(game.Players.LocalPlayer.Name.."'s jail") then
+            game:GetService'Players':Chat(("unjail me"))
+                wait(1)
+        else 
+                wait()
+            end
+        end
+    end
+
+    if command == ":AntiFreeze" then
+    while true do
+        if game.Players.LocalPlayer.Character:FindFirstChild(game.Players.LocalPlayer.Character.ice) then
+            game:GetService'Players':Chat(("unjail me"))
+                wait(1)
+        else 
+                wait()
+            end
+        end
+    end
+
+    if command == ":AntiDMG" then
+    while true do
+            if game.Players.LocalPlayer.Character.Humanoid.Health < 80 then
+                game:GetService'Players':Chat(("health me 100"))
+                wait(.7)
+            else
+                wait()
+            end
+        end
+    end
+
+    if command == "ACK" then
+        game:GetService'Players':Chat(("music 2314312727"))
+        wait(.4)
+        game.Workspace.Terrain._Game.Folder.Sound.TimePosition = 21.9
+        wait(.7)
+        game:GetService'Players':Chat(("music"))
+    end
+
+    if command == ":crash" then
+        game:GetService'Players':Chat(("time 7"))
+        wait()
+        game:GetService'Players':Chat(("colorshifttop 0 0 31231213"))
+        wait()
+        game:GetService'Players':Chat(("colorshiftbottom 0 0 31231213"))
+        wait()
+        game:GetService'Players':Chat(("music 000000000000000000000000000000000000000000000000000000000130840811"))
+        wait()
+        game:GetService'Players':Chat(("gear me 00000000000000000000000000000000000000000000000000000000094794847"))
+        wait(.4)
+        game:GetService'Players':Chat(("m/Your system has Blue Screened, but don't worry! We'll restart it for you!"))
+        wait(.5)
+        game:GetService'Players':Chat(("stopmusic"))
+        wait()
+        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack.VampireVanquisher)
+        wait(.1)
+        for i = 1,5,1 do
+            game:GetService'Players':Chat(("size me 0.3"))
+            wait()
+        end    
+    end
+
+    if command == ":funni" then
+        wait(1)
+        game:GetService'Players':Chat(("gear me 00000000000000000000000000000000000000000000000000000000068354832"))
+        wait()
+        game:GetService'Players':Chat(("unff all"))
+        wait()
+        game:GetService'Players':Chat(("tp all me"))
+        wait(.5)
+        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack.BlizzardWand)
+        wait(.7)
+        for i = 1,5,1 do
+            game:GetService'Players':Chat(("reset others"))
+            wait(.2)
+        end
+    end
+    
+    if command == ":dg" then
+        game:GetService'Players':Chat(("colorshifttop 3243420 3243420 3243420"))
+        wait()
+        game:GetService'Players':Chat(("colorshiftbottom 2550000 2160000 0"))
+        wait()
+        game:GetService'Players':Chat(("ambient 0 0 216000000000000000"))
+        wait()
+        game:GetService'Players':Chat(("time 7"))
+        wait()
+        game:GetService'Players':Chat(("fogend 20"))
+        wait()
+        game:GetService'Players':Chat(("disco"))
+        wait()
+    end
+end)
+
+-- Hotkeys
+
+-- Sprint Hotkey
+
+userInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+	
+	if input.UserInputType == Enum.UserInputType.Keyboard then
+		if input.KeyCode == Enum.KeyCode.LeftShift then
+			game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = 30
+		end
+	end
+end)
+
+userInputService.InputEnded:Connect(function(input, gameProcessedEvent)
+
+	if input.UserInputType == Enum.UserInputType.Keyboard then
+		if input.KeyCode == Enum.KeyCode.LeftShift then
+			game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = 16
+		end
+	end
+end)
+
+mousee.KeyDown:connect(function(key)
+	if key:lower() == "m" then
+		if mousee.Target then
+			local target = mousee.Target
+			function movepart()
+				local cf = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local looping = true
+				spawn(function()
+					while true do
+						game:GetService('RunService').Heartbeat:Wait()
+						game.Players.LocalPlayer.Character['Humanoid']:ChangeState(11)
+						cf.CFrame = target.CFrame * CFrame.new(-1*(target.Size.X/2)-(game.Players.LocalPlayer.Character['Torso'].Size.X/2), 0, 0)
+						if not looping then break end
+					end
+				end)
+				spawn(function() while looping do wait(.1) game.Players:Chat('unpunish me') end end)
+				wait(0.25)
+				looping = false
+			end
+			movepart()
+		end
+	end
+end)
+
+wait(5)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Gui Script
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Gear = Instance.new("Folder")
+local Gui = Instance.new("ScrollingFrame")
+local EpicSword = Instance.new("TextButton")
+local Slide = Instance.new("TextButton")
+local Water = Instance.new("TextButton")
+local GearJail = Instance.new("TextButton")
+local Drone = Instance.new("TextButton")
+local TimeStop = Instance.new("TextButton")
+local RailGun = Instance.new("TextButton")
+local Machete = Instance.new("TextButton")
+local TextButton = Instance.new("TextButton")
+local TextButton_2 = Instance.new("TextButton")
+local BoomBox = Instance.new("TextButton")
+local Paint = Instance.new("TextButton")
+local GearOpen = Instance.new("TextButton")
+local MusicOpen = Instance.new("TextButton")
+local Open = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+local Close = Instance.new("TextButton")
+local Music = Instance.new("Folder")
+local TextLabel_2 = Instance.new("TextLabel")
+local Close_2 = Instance.new("TextButton")
+local Gui_2 = Instance.new("ScrollingFrame")
+local AMOGUS = Instance.new("TextButton")
+local ChugJug = Instance.new("TextButton")
+local Buur = Instance.new("TextButton")
+local SugarCrash = Instance.new("TextButton")
+local AnimeThighs = Instance.new("TextButton")
+local MCMENTALATHISBEST = Instance.new("TextButton")
+local DreamMusic = Instance.new("TextButton")
+local Annoying = Instance.new("TextButton")
+local TextButton_3 = Instance.new("TextButton")
+local TextButton_4 = Instance.new("TextButton")
+local TextButton_5 = Instance.new("TextButton")
+local TextButton_6 = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Gear.Name = "Gear"
+Gear.Parent = ScreenGui
+
+Gui.Name = "Gui"
+Gui.Parent = Gear
+Gui.Active = true
+Gui.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+Gui.Position = UDim2.new(0.739346564, 0, 0.449712634, 0)
+Gui.Size = UDim2.new(0, 238, 0, 160)
+Gui.Visible = false
+Gui.ScrollBarThickness = 3
+
+EpicSword.Name = "EpicSword"
+EpicSword.Parent = Gui
+EpicSword.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+EpicSword.Position = UDim2.new(0.105042018, 0, 0.00431034481, 0)
+EpicSword.Size = UDim2.new(0, 53, 0, 22)
+EpicSword.Font = Enum.Font.SourceSans
+EpicSword.Text = "Epic Sword"
+EpicSword.TextColor3 = Color3.fromRGB(255, 255, 255)
+EpicSword.TextScaled = true
+EpicSword.TextSize = 14.000
+EpicSword.TextWrapped = true
+
+Slide.Name = "Slide"
+Slide.Parent = Gui
+Slide.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+Slide.Position = UDim2.new(0.386554629, 0, 0.00431034481, 0)
+Slide.Size = UDim2.new(0, 53, 0, 22)
+Slide.Font = Enum.Font.SourceSans
+Slide.Text = "Slide"
+Slide.TextColor3 = Color3.fromRGB(255, 255, 255)
+Slide.TextScaled = true
+Slide.TextSize = 14.000
+Slide.TextWrapped = true
+
+Water.Name = "Water"
+Water.Parent = Gui
+Water.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+Water.Position = UDim2.new(0.668067217, 0, 0.00431034481, 0)
+Water.Size = UDim2.new(0, 53, 0, 22)
+Water.Font = Enum.Font.SourceSans
+Water.Text = "Water"
+Water.TextColor3 = Color3.fromRGB(255, 255, 255)
+Water.TextScaled = true
+Water.TextSize = 14.000
+Water.TextWrapped = true
+
+GearJail.Name = "GearJail"
+GearJail.Parent = Gui
+GearJail.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+GearJail.Position = UDim2.new(0.105042018, 0, 0.0301724151, 0)
+GearJail.Size = UDim2.new(0, 53, 0, 22)
+GearJail.Font = Enum.Font.SourceSans
+GearJail.Text = "Gear Un/Lock"
+GearJail.TextColor3 = Color3.fromRGB(255, 255, 255)
+GearJail.TextScaled = true
+GearJail.TextSize = 14.000
+GearJail.TextWrapped = true
+
+Drone.Name = "Drone"
+Drone.Parent = Gui
+Drone.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+Drone.Position = UDim2.new(0.668067217, 0, 0.0301724151, 0)
+Drone.Size = UDim2.new(0, 53, 0, 22)
+Drone.Font = Enum.Font.SourceSans
+Drone.Text = "Drone"
+Drone.TextColor3 = Color3.fromRGB(255, 255, 255)
+Drone.TextScaled = true
+Drone.TextSize = 14.000
+Drone.TextWrapped = true
+
+TimeStop.Name = "Time Stop"
+TimeStop.Parent = Gui
+TimeStop.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+TimeStop.Position = UDim2.new(0.105042018, 0, 0.0545976982, 0)
+TimeStop.Size = UDim2.new(0, 53, 0, 22)
+TimeStop.Font = Enum.Font.SourceSans
+TimeStop.Text = "Time Stop"
+TimeStop.TextColor3 = Color3.fromRGB(255, 255, 255)
+TimeStop.TextScaled = true
+TimeStop.TextSize = 14.000
+TimeStop.TextWrapped = true
+
+RailGun.Name = "RailGun"
+RailGun.Parent = Gui
+RailGun.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+RailGun.Position = UDim2.new(0.386554629, 0, 0.0545976982, 0)
+RailGun.Size = UDim2.new(0, 53, 0, 22)
+RailGun.Font = Enum.Font.SourceSans
+RailGun.Text = "Rail Gun"
+RailGun.TextColor3 = Color3.fromRGB(255, 255, 255)
+RailGun.TextScaled = true
+RailGun.TextSize = 14.000
+RailGun.TextWrapped = true
+
+Machete.Name = "Machete"
+Machete.Parent = Gui
+Machete.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+Machete.Position = UDim2.new(0.668067217, 0, 0.0545976982, 0)
+Machete.Size = UDim2.new(0, 53, 0, 22)
+Machete.Font = Enum.Font.SourceSans
+Machete.Text = "Machete"
+Machete.TextColor3 = Color3.fromRGB(255, 255, 255)
+Machete.TextScaled = true
+Machete.TextSize = 14.000
+Machete.TextWrapped = true
+
+TextButton.Parent = Gui
+TextButton.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+TextButton.Position = UDim2.new(0.668067217, 0, 0.0804597735, 0)
+TextButton.Size = UDim2.new(0, 53, 0, 22)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "WIP"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextScaled = true
+TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
+
+TextButton_2.Parent = Gui
+TextButton_2.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+TextButton_2.Position = UDim2.new(0.386554629, 0, 0.0804597735, 0)
+TextButton_2.Size = UDim2.new(0, 53, 0, 22)
+TextButton_2.Font = Enum.Font.SourceSans
+TextButton_2.Text = "WIP"
+TextButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_2.TextScaled = true
+TextButton_2.TextSize = 14.000
+TextButton_2.TextWrapped = true
+
+BoomBox.Name = "BoomBox"
+BoomBox.Parent = Gui
+BoomBox.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+BoomBox.Position = UDim2.new(0.105042018, 0, 0.0804597735, 0)
+BoomBox.Size = UDim2.new(0, 53, 0, 22)
+BoomBox.Font = Enum.Font.SourceSans
+BoomBox.Text = "Boom Box"
+BoomBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+BoomBox.TextScaled = true
+BoomBox.TextSize = 14.000
+BoomBox.TextWrapped = true
+
+Paint.Name = "Paint"
+Paint.Parent = Gui
+Paint.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+Paint.Position = UDim2.new(0.386554629, 0, 0.0301724151, 0)
+Paint.Size = UDim2.new(0, 53, 0, 22)
+Paint.Font = Enum.Font.SourceSans
+Paint.Text = "Paint Bucket"
+Paint.TextColor3 = Color3.fromRGB(255, 255, 255)
+Paint.TextScaled = true
+Paint.TextSize = 14.000
+Paint.TextWrapped = true
+
+GearOpen.Name = "GearOpen"
+GearOpen.Parent = Gear
+GearOpen.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+GearOpen.Position = UDim2.new(0.8046875, 0, 0.648058236, 0)
+GearOpen.Size = UDim2.new(0, 27, 0, 25)
+GearOpen.Visible = false
+GearOpen.Font = Enum.Font.SourceSans
+GearOpen.Text = "<"
+GearOpen.TextColor3 = Color3.fromRGB(255, 255, 255)
+GearOpen.TextScaled = true
+GearOpen.TextSize = 14.000
+GearOpen.TextWrapped = true
+
+MusicOpen.Name = "MusicOpen"
+MusicOpen.Parent = Gear
+MusicOpen.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+MusicOpen.Position = UDim2.new(0.823886335, 0, 0.648000002, 0)
+MusicOpen.Size = UDim2.new(0, 27, 0, 25)
+MusicOpen.Visible = false
+MusicOpen.Font = Enum.Font.SourceSans
+MusicOpen.Text = ">"
+MusicOpen.TextColor3 = Color3.fromRGB(255, 255, 255)
+MusicOpen.TextScaled = true
+MusicOpen.TextSize = 14.000
+MusicOpen.TextWrapped = true
+
+Open.Name = "Open"
+Open.Parent = Gear
+Open.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+Open.Position = UDim2.new(0.96875, 0, 0.653735697, 0)
+Open.Size = UDim2.new(0, 32, 0, 17)
+Open.Font = Enum.Font.SourceSans
+Open.Text = "Open"
+Open.TextColor3 = Color3.fromRGB(255, 255, 255)
+Open.TextSize = 14.000
+
+TextLabel.Parent = Gear
+TextLabel.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+TextLabel.Position = UDim2.new(0.739346564, 0, 0.425287336, 0)
+TextLabel.Size = UDim2.new(0, 238, 0, 17)
+TextLabel.Visible = false
+TextLabel.Font = Enum.Font.SourceSansSemibold
+TextLabel.Text = "Kohls Admin Gear Gui"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 24.000
+
+Close.Name = "Close"
+Close.Parent = TextLabel
+Close.BackgroundColor3 = Color3.fromRGB(132, 0, 2)
+Close.Position = UDim2.new(0.928571343, 0, 0, 0)
+Close.Size = UDim2.new(0, 17, 0, 17)
+Close.Font = Enum.Font.Cartoon
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close.TextSize = 20.000
+
+Music.Name = "Music"
+Music.Parent = ScreenGui
+
+TextLabel_2.Parent = Music
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+TextLabel_2.Position = UDim2.new(0.739346564, 0, 0.425287336, 0)
+TextLabel_2.Size = UDim2.new(0, 238, 0, 17)
+TextLabel_2.Visible = false
+TextLabel_2.Font = Enum.Font.SourceSansSemibold
+TextLabel_2.Text = "Kohls Admin Music Gui"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextSize = 24.000
+
+Close_2.Name = "Close"
+Close_2.Parent = TextLabel_2
+Close_2.BackgroundColor3 = Color3.fromRGB(132, 0, 2)
+Close_2.Position = UDim2.new(0.928571343, 0, 0, 0)
+Close_2.Size = UDim2.new(0, 17, 0, 17)
+Close_2.Font = Enum.Font.Cartoon
+Close_2.Text = "X"
+Close_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close_2.TextSize = 20.000
+
+Gui_2.Name = "Gui"
+Gui_2.Parent = Music
+Gui_2.Active = true
+Gui_2.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+Gui_2.Position = UDim2.new(0.739346564, 0, 0.449712634, 0)
+Gui_2.Size = UDim2.new(0, 238, 0, 160)
+Gui_2.Visible = false
+Gui_2.ScrollBarThickness = 3
+
+AMOGUS.Name = "AMOGUS"
+AMOGUS.Parent = Gui_2
+AMOGUS.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+AMOGUS.Position = UDim2.new(0.105042018, 0, 0.00431034481, 0)
+AMOGUS.Size = UDim2.new(0, 53, 0, 22)
+AMOGUS.Font = Enum.Font.SourceSans
+AMOGUS.Text = "AMOGUS"
+AMOGUS.TextColor3 = Color3.fromRGB(255, 255, 255)
+AMOGUS.TextScaled = true
+AMOGUS.TextSize = 14.000
+AMOGUS.TextWrapped = true
+
+ChugJug.Name = "ChugJug"
+ChugJug.Parent = Gui_2
+ChugJug.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+ChugJug.Position = UDim2.new(0.386554629, 0, 0.00431034481, 0)
+ChugJug.Size = UDim2.new(0, 53, 0, 22)
+ChugJug.Font = Enum.Font.SourceSans
+ChugJug.Text = "Chug Jug"
+ChugJug.TextColor3 = Color3.fromRGB(255, 255, 255)
+ChugJug.TextScaled = true
+ChugJug.TextSize = 14.000
+ChugJug.TextWrapped = true
+
+Buur.Name = "Buur"
+Buur.Parent = Gui_2
+Buur.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+Buur.Position = UDim2.new(0.668067217, 0, 0.00431034481, 0)
+Buur.Size = UDim2.new(0, 53, 0, 22)
+Buur.Font = Enum.Font.SourceSans
+Buur.Text = "Buur"
+Buur.TextColor3 = Color3.fromRGB(255, 255, 255)
+Buur.TextScaled = true
+Buur.TextSize = 14.000
+Buur.TextWrapped = true
+
+SugarCrash.Name = "SugarCrash"
+SugarCrash.Parent = Gui_2
+SugarCrash.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+SugarCrash.Position = UDim2.new(0.105042018, 0, 0.0301724151, 0)
+SugarCrash.Size = UDim2.new(0, 53, 0, 22)
+SugarCrash.Font = Enum.Font.SourceSans
+SugarCrash.Text = "Sugar Crash"
+SugarCrash.TextColor3 = Color3.fromRGB(255, 255, 255)
+SugarCrash.TextScaled = true
+SugarCrash.TextSize = 14.000
+SugarCrash.TextWrapped = true
+
+AnimeThighs.Name = "AnimeThighs"
+AnimeThighs.Parent = Gui_2
+AnimeThighs.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+AnimeThighs.Position = UDim2.new(0.386554629, 0, 0.0301724151, 0)
+AnimeThighs.Size = UDim2.new(0, 53, 0, 22)
+AnimeThighs.Font = Enum.Font.SourceSans
+AnimeThighs.Text = "Anime Thighs"
+AnimeThighs.TextColor3 = Color3.fromRGB(255, 255, 255)
+AnimeThighs.TextScaled = true
+AnimeThighs.TextSize = 14.000
+AnimeThighs.TextWrapped = true
+
+MCMENTALATHISBEST.Name = "MCMENTALATHISBEST"
+MCMENTALATHISBEST.Parent = Gui_2
+MCMENTALATHISBEST.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+MCMENTALATHISBEST.Position = UDim2.new(0.668067217, 0, 0.0301724151, 0)
+MCMENTALATHISBEST.Size = UDim2.new(0, 53, 0, 22)
+MCMENTALATHISBEST.Font = Enum.Font.SourceSans
+MCMENTALATHISBEST.Text = "MC Mental"
+MCMENTALATHISBEST.TextColor3 = Color3.fromRGB(255, 255, 255)
+MCMENTALATHISBEST.TextScaled = true
+MCMENTALATHISBEST.TextSize = 14.000
+MCMENTALATHISBEST.TextWrapped = true
+
+DreamMusic.Name = "DreamMusic"
+DreamMusic.Parent = Gui_2
+DreamMusic.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+DreamMusic.Position = UDim2.new(0.105042018, 0, 0.0545976982, 0)
+DreamMusic.Size = UDim2.new(0, 53, 0, 22)
+DreamMusic.Font = Enum.Font.SourceSans
+DreamMusic.Text = "Dream Music"
+DreamMusic.TextColor3 = Color3.fromRGB(255, 255, 255)
+DreamMusic.TextScaled = true
+DreamMusic.TextSize = 14.000
+DreamMusic.TextWrapped = true
+
+Annoying.Name = "Annoying"
+Annoying.Parent = Gui_2
+Annoying.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+Annoying.Position = UDim2.new(0.386554629, 0, 0.0545976982, 0)
+Annoying.Size = UDim2.new(0, 53, 0, 22)
+Annoying.Font = Enum.Font.SourceSans
+Annoying.Text = "Annoying but loli"
+Annoying.TextColor3 = Color3.fromRGB(255, 255, 255)
+Annoying.TextScaled = true
+Annoying.TextSize = 14.000
+Annoying.TextWrapped = true
+
+TextButton_3.Parent = Gui_2
+TextButton_3.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+TextButton_3.Position = UDim2.new(0.668067217, 0, 0.0545976982, 0)
+TextButton_3.Size = UDim2.new(0, 53, 0, 22)
+TextButton_3.Font = Enum.Font.SourceSans
+TextButton_3.Text = "WIP"
+TextButton_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_3.TextScaled = true
+TextButton_3.TextSize = 14.000
+TextButton_3.TextWrapped = true
+
+TextButton_4.Parent = Gui_2
+TextButton_4.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+TextButton_4.Position = UDim2.new(0.668067217, 0, 0.0804597735, 0)
+TextButton_4.Size = UDim2.new(0, 53, 0, 22)
+TextButton_4.Font = Enum.Font.SourceSans
+TextButton_4.Text = "WIP"
+TextButton_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_4.TextScaled = true
+TextButton_4.TextSize = 14.000
+TextButton_4.TextWrapped = true
+
+TextButton_5.Parent = Gui_2
+TextButton_5.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+TextButton_5.Position = UDim2.new(0.386554629, 0, 0.0804597735, 0)
+TextButton_5.Size = UDim2.new(0, 53, 0, 22)
+TextButton_5.Font = Enum.Font.SourceSans
+TextButton_5.Text = "WIP"
+TextButton_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_5.TextScaled = true
+TextButton_5.TextSize = 14.000
+TextButton_5.TextWrapped = true
+
+TextButton_6.Parent = Gui_2
+TextButton_6.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+TextButton_6.Position = UDim2.new(0.105042018, 0, 0.0804597735, 0)
+TextButton_6.Size = UDim2.new(0, 53, 0, 22)
+TextButton_6.Font = Enum.Font.SourceSans
+TextButton_6.Text = "WIP"
+TextButton_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_6.TextScaled = true
+TextButton_6.TextSize = 14.000
+TextButton_6.TextWrapped = true
+
+-- Scripts:
+
+local function FYEV_fake_script() -- EpicSword.LocalScript 
+	local script = Instance.new('LocalScript', EpicSword)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game:GetService'Players':Chat(("gear me 00000000000000000000000000000000000000000000000000000000068539623"))
+	end)
+end
+coroutine.wrap(FYEV_fake_script)()
+local function KEYSCY_fake_script() -- Slide.LocalScript 
+	local script = Instance.new('LocalScript', Slide)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game:GetService'Players':Chat(("gear me 00000000000000000000000000000000000000000000000000000000019704064"))
+		game:GetService'Players':Chat(("gear me 00000000000000000000000000000000000000000000000000000000032356064"))
+	end)
+end
+coroutine.wrap(KEYSCY_fake_script)()
+local function VDWSHY_fake_script() -- Water.LocalScript 
+	local script = Instance.new('LocalScript', Water)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game:GetService'Players':Chat(("gear me 000000000000000000000000000000000000000000000000000000000236438668"))
+	end)
+	
+end
+coroutine.wrap(VDWSHY_fake_script)()
+local function CUDI_fake_script() -- GearJail.LocalScript 
+	local script = Instance.new('LocalScript', GearJail)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game:GetService'Players':Chat(("gear me 00000000000000000000000000000000000000000000000000000000082357101"))
+		game:GetService'Players':Chat(("gear me 00000000000000000000000000000000000000000000000000000000059190534"))
+	end)
+	
+end
+coroutine.wrap(CUDI_fake_script)()
+local function UHEJGX_fake_script() -- Drone.LocalScript 
+	local script = Instance.new('LocalScript', Drone)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game:GetService'Players':Chat(("gear me 000000000000000000000000000000000000000000000000000000000987032734"))
+	end)
+	
+end
+coroutine.wrap(UHEJGX_fake_script)()
+local function PKJVCVU_fake_script() -- TimeStop.LocalScript 
+	local script = Instance.new('LocalScript', TimeStop)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game:GetService'Players':Chat(("gear me 00000000000000000000000000000000000000000000000000000000071037101"))
+	end)
+	
+end
+coroutine.wrap(PKJVCVU_fake_script)()
+local function DXWJWPW_fake_script() -- RailGun.LocalScript 
+	local script = Instance.new('LocalScript', RailGun)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game:GetService'Players':Chat(("gear me 00000000000000000000000000000000000000000000000000000000079446473"))
+	end)
+	
+end
+coroutine.wrap(DXWJWPW_fake_script)()
+local function CYWNX_fake_script() -- Machete.LocalScript 
+	local script = Instance.new('LocalScript', Machete)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game:GetService'Players':Chat(("gear me 000000000000000000000000000000000000000000000000000000000123234673"))
+	end)
+	
+end
+coroutine.wrap(CYWNX_fake_script)()
+local function YYCJS_fake_script() -- BoomBox.LocalScript 
+	local script = Instance.new('LocalScript', BoomBox)
+
+	print("Hello world!")
+	script.Parent.MouseButton1Down:connect(function()
+		game:GetService'Players':Chat(("gear me 000000000000000000000000000000000000000000000000000000000212641536"))
+	end)
+	
+end
+coroutine.wrap(YYCJS_fake_script)()
+local function RVHLQ_fake_script() -- Paint.LocalScript 
+	local script = Instance.new('LocalScript', Paint)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game:GetService'Players':Chat(("gear me 00000000000000000000000000000000000000000000000000000000018474459"))
+	end)
+	
+end
+coroutine.wrap(RVHLQ_fake_script)()
+local function MGIIPU_fake_script() -- GearOpen.LocalScript 
+	local script = Instance.new('LocalScript', GearOpen)
+
+	script.Parent.MouseButton1Down:connect(function()
+		script.Parent.Parent.TextLabel.Visible = true
+		script.Parent.Parent.Gui.Visible = true
+		script.Parent.Visible = false
+		script.Parent.Parent.Parent.Music.TextLabel.Visible = false
+		script.Parent.Parent.Parent.Music.Gui.Visible = false
+		script.Parent.Parent.MusicOpen.Visible = true
+	end)
+end
+coroutine.wrap(MGIIPU_fake_script)()
+local function EFIPZB_fake_script() -- MusicOpen.LocalScript 
+	local script = Instance.new('LocalScript', MusicOpen)
+
+	script.Parent.MouseButton1Down:connect(function()
+		script.Parent.Parent.Parent.Music.TextLabel.Visible = true
+		script.Parent.Parent.Parent.Music.Gui.Visible = true
+		script.Parent.Visible = false
+		script.Parent.Parent.TextLabel.Visible = false
+		script.Parent.Parent.Gui.Visible = false
+		script.Parent.Parent.GearOpen.Visible = true
+	end)
+end
+coroutine.wrap(EFIPZB_fake_script)()
+local function HFWP_fake_script() -- Open.LocalScript 
+	local script = Instance.new('LocalScript', Open)
+
+	script.Parent.MouseButton1Down:connect(function()
+		script.Parent.Parent.TextLabel.Visible = true
+		script.Parent.Parent.Gui.Visible = true
+		script.Parent.Parent.MusicOpen.Visible = true
+		script.Parent.Visible = false
+	end)
+end
+coroutine.wrap(HFWP_fake_script)()
+local function OJOY_fake_script() -- Close.LocalScript 
+	local script = Instance.new('LocalScript', Close)
+
+	script.Parent.MouseButton1Down:connect(function()
+		script.Parent.Parent.Visible = false
+		script.Parent.Parent.Parent.Gui.Visible = false
+		script.Parent.Parent.Parent.Open.Visible = true
+		script.Parent.Parent.Parent.MusicOpen.Visible = false
+		script.Parent.Parent.Parent.GearOpen.Visible = false
+	end)
+end
+coroutine.wrap(OJOY_fake_script)()
+local function XNOFY_fake_script() -- Close_2.LocalScript 
+	local script = Instance.new('LocalScript', Close_2)
+
+	script.Parent.MouseButton1Down:connect(function()
+		script.Parent.Parent.Visible = false
+		script.Parent.Parent.Parent.Gui.Visible = false
+		script.Parent.Parent.Parent.Parent.Gear.Open.Visible = true
+		script.Parent.Parent.Parent.Parent.Gear.GearOpen.Visible = false
+		script.Parent.Parent.Parent.Parent.Gear.MusicOpen.Visible = false
+	end)
+end
+coroutine.wrap(XNOFY_fake_script)()
+local function BTXCUHF_fake_script() -- AMOGUS.LocalScript 
+	local script = Instance.new('LocalScript', AMOGUS)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game:GetService'Players':Chat(("music 0000000000000000000000000000000000000000000000000000000006132224076"))
+	end)
+end
+coroutine.wrap(BTXCUHF_fake_script)()
+local function VBTF_fake_script() -- ChugJug.LocalScript 
+	local script = Instance.new('LocalScript', ChugJug)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game:GetService'Players':Chat(("music 0000000000000000000000000000000000000000000000000000000006429721293"))
+	end)
+end
+coroutine.wrap(VBTF_fake_script)()
+local function XPXX_fake_script() -- Buur.LocalScript 
+	local script = Instance.new('LocalScript', Buur)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game:GetService'Players':Chat(("music 0000000000000000000000000000000000000000000000000000000006087189175"))
+	end)
+	
+end
+coroutine.wrap(XPXX_fake_script)()
+local function JXNWTT_fake_script() -- SugarCrash.LocalScript 
+	local script = Instance.new('LocalScript', SugarCrash)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game:GetService'Players':Chat(("music 0000000000000000000000000000000000000000000000000000000005914756563"))
+	end)
+	
+end
+coroutine.wrap(JXNWTT_fake_script)()
+local function AQEGTX_fake_script() -- AnimeThighs.LocalScript 
+	local script = Instance.new('LocalScript', AnimeThighs)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game:GetService'Players':Chat(("music 0000000000000000000000000000000000000000000000000000000006122318065"))
+	end)
+	
+end
+coroutine.wrap(AQEGTX_fake_script)()
+local function FTRWEUG_fake_script() -- MCMENTALATHISBEST.LocalScript 
+	local script = Instance.new('LocalScript', MCMENTALATHISBEST)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game:GetService'Players':Chat(("music 0000000000000000000000000000000000000000000000000000000006586550596"))
+	end)
+	
+end
+coroutine.wrap(FTRWEUG_fake_script)()
+local function EZTHKZ_fake_script() -- DreamMusic.LocalScript 
+	local script = Instance.new('LocalScript', DreamMusic)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game:GetService'Players':Chat(("music 0000000000000000000000000000000000000000000000000000000006029210056"))
+	end)
+	
+end
+coroutine.wrap(EZTHKZ_fake_script)()
+local function PVOJMZX_fake_script() -- Annoying.LocalScript 
+	local script = Instance.new('LocalScript', Annoying)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game:GetService'Players':Chat(("music 0000000000000000000000000000000000000000000000000000000006499194433"))
+	end)
+	
+end
+coroutine.wrap(PVOJMZX_fake_script)()
+
+Player.Chatted:Connect(function(msg, recipient)
+    commandcSplit = string.split(msg, ' ')
+    commandc = commandcSplit[1]
+    if commandc == ":scmds" then
+        -- Gui to Lua
+        -- Version: 3.2
+        
+        -- Instances:
+        
+        local ScreenGui = Instance.new("ScreenGui")
+        local ScrollingFrame = Instance.new("ScrollingFrame")
+        local _1 = Instance.new("TextLabel")
+        local _10 = Instance.new("TextLabel")
+        local _11 = Instance.new("TextLabel")
+        local _2 = Instance.new("TextLabel")
+        local _3 = Instance.new("TextLabel")
+        local _4 = Instance.new("TextLabel")
+        local _5 = Instance.new("TextLabel")
+        local _6 = Instance.new("TextLabel")
+        local _7 = Instance.new("TextLabel")
+        local _8 = Instance.new("TextLabel")
+        local _9 = Instance.new("TextLabel")
+        local _12 = Instance.new("TextLabel")
+        local _13 = Instance.new("TextLabel")
+        local CommandsLabel = Instance.new("TextLabel")
+        local TextButton = Instance.new("TextButton")
+        
+        --Properties:
+        
+        ScreenGui.Parent = game.CoreGui
+        ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+        
+        ScrollingFrame.Parent = ScreenGui
+        ScrollingFrame.Active = true
+        ScrollingFrame.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+        ScrollingFrame.Position = UDim2.new(0.344460219, 0, 0.324029118, 0)
+        ScrollingFrame.Size = UDim2.new(0, 439, 0, 330)
+        ScrollingFrame.ScrollBarThickness = 6
+        
+        _1.Name = "1"
+        _1.Parent = ScrollingFrame
+        _1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        _1.BackgroundTransparency = 1.000
+        _1.Position = UDim2.new(0, 0, 0.0176279172, 0)
+        _1.Size = UDim2.new(0, 439, 0, 28)
+        _1.Font = Enum.Font.SourceSans
+        _1.Text = ":AntiKill - Type this to automatically reset everytime you die"
+        _1.TextColor3 = Color3.fromRGB(255, 255, 255)
+        _1.TextSize = 14.000
+        
+        _10.Name = "10"
+        _10.Parent = ScrollingFrame
+        _10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        _10.BackgroundTransparency = 1.000
+        _10.Position = UDim2.new(-0.00227790419, 0, 0.197303489, 0)
+        _10.Size = UDim2.new(0, 439, 0, 28)
+        _10.Font = Enum.Font.SourceSans
+        _10.Text = ":house - Type this to teleport to the house"
+        _10.TextColor3 = Color3.fromRGB(255, 255, 255)
+        _10.TextSize = 14.000
+        
+        _11.Name = "11"
+        _11.Parent = ScrollingFrame
+        _11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        _11.BackgroundTransparency = 1.000
+        _11.Position = UDim2.new(-0.00227790419, 0, 0.213733345, 0)
+        _11.Size = UDim2.new(0, 439, 0, 28)
+        _11.Font = Enum.Font.SourceSans
+        _11.Text = ":regen - Type this to reset the admin pads"
+        _11.TextColor3 = Color3.fromRGB(255, 255, 255)
+        _11.TextSize = 14.000
+        
+        _2.Name = "2"
+        _2.Parent = ScrollingFrame
+        _2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        _2.BackgroundTransparency = 1.000
+        _2.Position = UDim2.new(0, 0, 0.0344000459, 0)
+        _2.Size = UDim2.new(0, 439, 0, 28)
+        _2.Font = Enum.Font.SourceSans
+        _2.Text = ":AntiDMG - Type this to automatically heal when you take damage"
+        _2.TextColor3 = Color3.fromRGB(255, 255, 255)
+        _2.TextSize = 14.000
+        
+        _3.Name = "3"
+        _3.Parent = ScrollingFrame
+        _3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        _3.BackgroundTransparency = 1.000
+        _3.Position = UDim2.new(0, 0, 0.0508737862, 0)
+        _3.Size = UDim2.new(0, 439, 0, 28)
+        _3.Font = Enum.Font.SourceSans
+        _3.Text = ":AntiPunish - Type this to automatically get unpunished when you get punished"
+        _3.TextColor3 = Color3.fromRGB(255, 255, 255)
+        _3.TextSize = 14.000
+        
+        _4.Name = "4"
+        _4.Parent = ScrollingFrame
+        _4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        _4.BackgroundTransparency = 1.000
+        _4.Position = UDim2.new(0, 0, 0.0673441589, 0)
+        _4.Size = UDim2.new(0, 439, 0, 28)
+        _4.Font = Enum.Font.SourceSans
+        _4.Text = ":AntiFreeze - Type this to automatically get thawed"
+        _4.TextColor3 = Color3.fromRGB(255, 255, 255)
+        _4.TextSize = 14.000
+        
+        _5.Name = "5"
+        _5.Parent = ScrollingFrame
+        _5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        _5.BackgroundTransparency = 1.000
+        _5.Position = UDim2.new(-0.00227790419, 0, 0.117493398, 0)
+        _5.Size = UDim2.new(0, 439, 0, 28)
+        _5.Font = Enum.Font.SourceSans
+        _5.Text = ":crash - Type this to crash the server"
+        _5.TextColor3 = Color3.fromRGB(255, 255, 255)
+        _5.TextSize = 14.000
+        
+        _6.Name = "6"
+        _6.Parent = ScrollingFrame
+        _6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        _6.BackgroundTransparency = 1.000
+        _6.Position = UDim2.new(-0.00227790419, 0, 0.133967176, 0)
+        _6.Size = UDim2.new(0, 439, 0, 28)
+        _6.Font = Enum.Font.SourceSans
+        _6.Text = ":slag - Type this the lag the server (Recommended to type :stop after a few seconds)"
+        _6.TextColor3 = Color3.fromRGB(255, 255, 255)
+        _6.TextSize = 13.000
+        
+        _7.Name = "7"
+        _7.Parent = ScrollingFrame
+        _7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        _7.BackgroundTransparency = 1.000
+        _7.Position = UDim2.new(-0.00227790419, 0, 0.150440887, 0)
+        _7.Size = UDim2.new(0, 439, 0, 28)
+        _7.Font = Enum.Font.SourceSans
+        _7.Text = ":floodlogs - Type this to flood the logs"
+        _7.TextColor3 = Color3.fromRGB(255, 255, 255)
+        _7.TextSize = 14.000
+        
+        _8.Name = "8"
+        _8.Parent = ScrollingFrame
+        _8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        _8.BackgroundTransparency = 1.000
+        _8.Position = UDim2.new(-0.00227790419, 0, 0.165050417, 0)
+        _8.Size = UDim2.new(0, 439, 0, 28)
+        _8.Font = Enum.Font.SourceSans
+        _8.Text = ":funni - Type this to mess up everyones controls (Click while running the command)"
+        _8.TextColor3 = Color3.fromRGB(255, 255, 255)
+        _8.TextSize = 13.000
+        
+        _9.Name = "9"
+        _9.Parent = ScrollingFrame
+        _9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        _9.BackgroundTransparency = 1.000
+        _9.Position = UDim2.new(-0.00227790419, 0, 0.180873558, 0)
+        _9.Size = UDim2.new(0, 439, 0, 28)
+        _9.Font = Enum.Font.SourceSans
+        _9.Text = ":spam (command) - Type this to spam commands (type :stop to stop spamming)"
+        _9.TextColor3 = Color3.fromRGB(255, 255, 255)
+        _9.TextSize = 14.000
+        
+        _12.Name = "12"
+        _12.Parent = ScrollingFrame
+        _12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        _12.BackgroundTransparency = 1.000
+        _12.Position = UDim2.new(0, 0, 0.100869268, 0)
+        _12.Size = UDim2.new(0, 439, 0, 28)
+        _12.Font = Enum.Font.SourceSans
+        _12.Text = ":robbyk - Type this to not die to the obby"
+        _12.TextColor3 = Color3.fromRGB(255, 255, 255)
+        _12.TextSize = 14.000
+        
+        _13.Name = "13"
+        _13.Parent = ScrollingFrame
+        _13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        _13.BackgroundTransparency = 1.000
+        _13.Position = UDim2.new(0, 0, 0.0838789716, 0)
+        _13.Size = UDim2.new(0, 439, 0, 28)
+        _13.Font = Enum.Font.SourceSans
+        _13.Text = ":AntiJail - Type this to automatically get unjailed"
+        _13.TextColor3 = Color3.fromRGB(255, 255, 255)
+        _13.TextSize = 14.000
+        
+        CommandsLabel.Name = "CommandsLabel"
+        CommandsLabel.Parent = ScreenGui
+        CommandsLabel.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+        CommandsLabel.Position = UDim2.new(0.344460219, 0, 0.324029118, 0)
+        CommandsLabel.Size = UDim2.new(0, 439, 0, 30)
+        CommandsLabel.Font = Enum.Font.SourceSans
+        CommandsLabel.Text = "Script Commands"
+        CommandsLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+        CommandsLabel.TextScaled = true
+        CommandsLabel.TextSize = 14.000
+        CommandsLabel.TextWrapped = true
+        
+        TextButton.Parent = CommandsLabel
+        TextButton.BackgroundColor3 = Color3.fromRGB(135, 0, 2)
+        TextButton.Position = UDim2.new(0.954441905, 0, 0, 0)
+        TextButton.Size = UDim2.new(0, 20, 0, 20)
+        TextButton.Font = Enum.Font.Nunito
+        TextButton.Text = "X"
+        TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+        TextButton.TextSize = 18.000
+        
+        -- Scripts:
+        
+        local function PGVOEKT_fake_script() -- TextButton.LocalScript 
+        	local script = Instance.new('LocalScript', TextButton)
+        
+        	script.Parent.MouseButton1Down:connect(function()
+        		script.Parent.Parent.Parent:Destroy()
+        	end)
+        end
+        coroutine.wrap(PGVOEKT_fake_script)()
+    end
+end)
+
+game.StarterGui:SetCore("SendNotification", {
+		Title = "Loaded!";
+		Text = "Loaded V1.14";
+		Duration = 5;
+	})
+wait(1)
+game.StarterGui:SetCore("SendNotification", {
+		Title = "Commands";
+		Text = "Type :scmds for a list of commands!";
+		Duration = 5;
+	})
+wait(10)
+game.StarterGui:SetCore("SendNotification", {
+		Title = ":D";
+		Text = "There are also some unlisted commands, look into the code and you can find them.";
+		Duration = 10;
+	})
