@@ -1715,6 +1715,8 @@ if game.PlaceId == 112420803 or 115670532 then
     
     -- Variables
     
+    local prefix = ":"
+    
     local v1 = "PaintPart"
 
     local visual = false
